@@ -131,7 +131,7 @@ export default function SciFiHeader() {
           AI
         </div>
 
-        <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white text-sm sm:text-base font-bold px-6 py-2 rounded-full shadow-lg shadow-orange-500/50 border-2 border-orange-400/50">
+        <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xl sm:text-2xl md:text-3xl font-bold px-8 py-3 rounded-full shadow-lg shadow-orange-500/50 border-2 border-orange-400/50">
           AI高精度
         </div>
 
