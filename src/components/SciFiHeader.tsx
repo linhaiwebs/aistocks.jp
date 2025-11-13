@@ -111,7 +111,7 @@ export default function SciFiHeader() {
   }, []);
 
   return (
-    <div className="relative w-full h-64 sm:h-72 md:h-80 bg-gradient-to-b from-[#032161] via-[#032f8b] to-[#032f8b] overflow-hidden">
+    <div className="relative w-full h-80 sm:h-96 md:h-[28rem] bg-gradient-to-b from-[#032161] via-[#032f8b] to-[#032f8b] overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#032f8b] pointer-events-none z-10"></div>
 
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#032161] to-transparent"></div>
@@ -126,20 +126,17 @@ export default function SciFiHeader() {
         style={{ width: '100%', height: '100%' }}
       />
 
-      <div className="absolute top-6 left-1/2 transform -translate-x-1/2 flex items-center justify-center z-30">
-        <div className="text-center">
-          <div className="text-[12rem] sm:text-[14rem] md:text-[16rem] font-black text-white tracking-wider drop-shadow-2xl" style={{ textShadow: '0 0 30px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.3)' }}>
-            AI
-          </div>
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 z-30">
+        <div className="text-7xl sm:text-8xl md:text-9xl font-black text-white tracking-wider drop-shadow-2xl" style={{ textShadow: '0 0 30px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.3)' }}>
+          AI
         </div>
-      </div>
 
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-20">
-        <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white text-sm sm:text-base font-bold px-6 py-2 rounded-full mb-3 shadow-lg shadow-orange-500/50 border-2 border-orange-400/50">
+        <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white text-sm sm:text-base font-bold px-6 py-2 rounded-full shadow-lg shadow-orange-500/50 border-2 border-orange-400/50">
           AI高精度
         </div>
+
         <div
-          className="text-white text-[2.8rem] sm:text-6xl md:text-7xl font-black tracking-wide"
+          className="text-white text-[2.8rem] sm:text-6xl md:text-7xl font-black tracking-wide text-center"
           style={{
             textShadow: '0 0 20px rgba(255, 165, 0, 0.6), 2px 2px 4px rgba(0,0,0,0.5), -1px -1px 0 rgba(0,0,0,0.3), 1px -1px 0 rgba(0,0,0,0.3), -1px 1px 0 rgba(0,0,0,0.3), 1px 1px 0 rgba(0,0,0,0.3)',
             fontFamily: 'sans-serif',
