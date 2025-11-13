@@ -126,9 +126,9 @@ export default function SciFiHeader() {
         style={{ width: '100%', height: '100%' }}
       />
 
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="absolute top-6 left-1/2 transform -translate-x-1/2 flex items-center justify-center z-30">
         <div className="text-center">
-          <div className="text-6xl sm:text-7xl md:text-8xl font-black text-white tracking-wider drop-shadow-2xl" style={{ textShadow: '0 0 30px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.3)' }}>
+          <div className="text-[12rem] sm:text-[14rem] md:text-[16rem] font-black text-white tracking-wider drop-shadow-2xl" style={{ textShadow: '0 0 30px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.3)' }}>
             AI
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function SciFiHeader() {
           AI高精度
         </div>
         <div
-          className="text-white text-3xl sm:text-4xl md:text-5xl font-black tracking-wide"
+          className="text-white text-[2.8rem] sm:text-6xl md:text-7xl font-black tracking-wide"
           style={{
             textShadow: '0 0 20px rgba(255, 165, 0, 0.6), 2px 2px 4px rgba(0,0,0,0.5), -1px -1px 0 rgba(0,0,0,0.3), 1px -1px 0 rgba(0,0,0,0.3), -1px 1px 0 rgba(0,0,0,0.3), 1px 1px 0 rgba(0,0,0,0.3)',
             fontFamily: 'sans-serif',
