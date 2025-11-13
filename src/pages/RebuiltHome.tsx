@@ -8,7 +8,7 @@ import { DiagnosisState } from '../types/diagnosis';
 import { useUrlParams } from '../hooks/useUrlParams';
 import { apiClient } from '../lib/apiClient';
 import { userTracking } from '../lib/userTracking';
-import { trackConversion } from '../lib/googleTracking';
+import { trackConversion, trackDiagnosisButtonClick, trackConversionButtonClick } from '../lib/googleTracking';
 
 const getDefaultStockData = (code: string): StockData => ({
   info: {
@@ -129,6 +129,8 @@ export default function RebuiltHome() {
 
   const runDiagnosis = async () => {
     if (diagnosisState !== 'initial' || !stockData || !hasRealData) return;
+
+    trackDiagnosisButtonClick();
 
     setDiagnosisState('connecting');
     setDiagnosisStartTime(Date.now());
@@ -297,6 +299,8 @@ export default function RebuiltHome() {
 
   const handleLineConversion = async () => {
     try {
+      trackConversionButtonClick();
+
       const response = await apiClient.get('/api/line-redirects/select');
 
       if (!response.ok) {

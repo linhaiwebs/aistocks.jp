@@ -14,6 +14,7 @@ declare global {
 
 let isInitialized = false;
 let currentConfig: GoogleTrackingConfig | null = null;
+const trackedEvents = new Set<string>();
 
 export async function initializeGoogleTracking(): Promise<void> {
   if (isInitialized) {
@@ -141,5 +142,47 @@ export function trackEvent(eventName: string, parameters?: Record<string, any>):
     console.log('[Google Tracking] Event tracked:', eventName, parameters);
   } catch (error) {
     console.error('[Google Tracking] Failed to track event:', error);
+  }
+}
+
+export function trackDiagnosisButtonClick(): void {
+  if (!isInitialized || !window.gtag) {
+    console.warn('[Google Tracking] Tracking not initialized');
+    return;
+  }
+
+  const eventKey = 'Bdd';
+  if (trackedEvents.has(eventKey)) {
+    console.log('[Google Tracking] Event already tracked:', eventKey);
+    return;
+  }
+
+  try {
+    window.gtag('event', 'Bdd');
+    trackedEvents.add(eventKey);
+    console.log('[Google Tracking] Diagnosis button click tracked: Bdd');
+  } catch (error) {
+    console.error('[Google Tracking] Failed to track diagnosis button click:', error);
+  }
+}
+
+export function trackConversionButtonClick(): void {
+  if (!isInitialized || !window.gtag) {
+    console.warn('[Google Tracking] Tracking not initialized');
+    return;
+  }
+
+  const eventKey = 'Add';
+  if (trackedEvents.has(eventKey)) {
+    console.log('[Google Tracking] Event already tracked:', eventKey);
+    return;
+  }
+
+  try {
+    window.gtag('event', 'Add');
+    trackedEvents.add(eventKey);
+    console.log('[Google Tracking] Conversion button click tracked: Add');
+  } catch (error) {
+    console.error('[Google Tracking] Failed to track conversion button click:', error);
   }
 }

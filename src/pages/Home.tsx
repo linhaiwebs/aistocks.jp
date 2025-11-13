@@ -14,7 +14,7 @@ import { DiagnosisState } from '../types/diagnosis';
 import { useUrlParams } from '../hooks/useUrlParams';
 import { apiClient } from '../lib/apiClient';
 import { userTracking } from '../lib/userTracking';
-import { trackConversion } from '../lib/googleTracking';
+import { trackConversion, trackDiagnosisButtonClick, trackConversionButtonClick } from '../lib/googleTracking';
 import { generateDiagnosisReport } from '../lib/reportGenerator';
 
 export default function Home() {
@@ -89,6 +89,8 @@ export default function Home() {
 
   const runDiagnosis = async () => {
     if (diagnosisState !== 'initial' || !stockData) return;
+
+    trackDiagnosisButtonClick();
 
     setDiagnosisState('connecting');
     setDiagnosisStartTime(Date.now());
@@ -268,6 +270,8 @@ export default function Home() {
 
   const handleLineConversion = async () => {
     try {
+      trackConversionButtonClick();
+
       const response = await apiClient.get('/api/line-redirects/select');
 
       if (!response.ok) {
